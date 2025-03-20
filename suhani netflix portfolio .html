@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.65">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">import { useState, useEffect } from "react";</p>
+<p class="p1">import { Card, CardContent } from "@/components/ui/card";</p>
+<p class="p1">import { Button } from "@/components/ui/button";</p>
+<p class="p1">import { Bell, Home } from "lucide-react";</p>
+<p class="p2"><br></p>
+<p class="p1">export default function SuhaniMakkarPortfolio() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const [page, setPage] = useState(0);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const [showIntro, setShowIntro] = useState(true);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>useEffect(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const introTimer = setTimeout(() =&gt; setShowIntro(false), 3000);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return () =&gt; clearTimeout(introTimer);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}, []);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const handleNext = () =&gt; setPage((prev) =&gt; (prev === 3 ? 1 : prev + 1));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const handlePrevious = () =&gt; setPage((prev) =&gt; (prev === 1 ? 3 : prev - 1));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const categories = [</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>title: "Academic Achievements",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>episodes: [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ title: "Episode 1: The Broken Bulb Mystery", description: "At just 11, Suhani repaired a broken bulb with spare torch parts, sparking a lifelong curiosity for problem-solving and innovation." },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ title: "Episode 2: Mastering Vedic Mathematics", description: "Certified in advanced Vedic Mathematics, Suhani conducted workshops to share analytical techniques with peers." },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ title: "Episode 3: Academic Triumphs at Atria", description: "Excelled academically while pursuing entrepreneurial projects, leading her to TETR College of Business for a greater challenge." }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>]</p>
+<p class="p1"><span class="Apple-converted-space">    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>title: "Entrepreneurial Ventures",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>episodes: [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ title: "Episode 4: Founding Diseño Conmigo", description: "Launched a digital marketing startup from home with zero investment, overcoming client acquisition challenges and empowering her mother to lead the business." },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ title: "Episode 5: The Shelter App Vision", description: "Conceptualized Shelter, an app to connect the homeless with NGOs, ensuring aid is responsibly delivered." }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>]</p>
+<p class="p1"><span class="Apple-converted-space">    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>title: "Technical Skills and Certifications",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>episodes: [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ title: "Episode 6: Python and AI/ML Adventures", description: "Completed advanced courses from Stanford and Udemy, mastering AI and data science." },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ title: "Episode 7: Cybersecurity Training by IIT", description: "Learned ethical hacking and data protection measures to strengthen cybersecurity knowledge." },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ title: "Episode 8: AI-driven Marketing with IBM", description: "Acquired practical skills in AI-powered chatbots and strategic digital marketing." }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>]</p>
+<p class="p1"><span class="Apple-converted-space">    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>title: "Creative and Leadership Pursuits",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>episodes: [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ title: "Episode 9: Published in WomenShine Magazine", description: "Authored impactful articles, showcasing empathy and effective communication." },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ title: "Episode 10: Certified Yoga Teacher", description: "Blends wellness and discipline through certified yoga training, applying mindfulness to all aspects of life." },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ title: "Episode 11: NCC Cadet Chronicles", description: "Developed leadership, discipline, and teamwork through National Cadet Corps training." }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>]</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (showIntro) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div className="bg-black flex items-center justify-center min-h-screen"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 className="text-red-600 text-6xl font-bold animate-pulse"&gt;SUHANI MAKKAR&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div className="bg-black text-white min-h-screen flex flex-col justify-center items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;header className="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-[#141414]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="flex items-center space-x-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;Home className="text-white w-6 h-6" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h1 className="text-red-600 text-3xl font-bold"&gt;SUHANI MAKKAR&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="flex items-center space-x-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;Bell className="text-white w-6 h-6" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;Button className="bg-red-600 text-white hover:bg-red-700" onClick={handlePrevious}&gt;Previous&lt;/Button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;Button className="bg-red-600 text-white hover:bg-red-700" onClick={handleNext}&gt;Next&lt;/Button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{page === 0 &amp;&amp; (</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="p-6 space-y-6 mt-14"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2 className="text-4xl font-bold text-red-600"&gt;About Me&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p className="text-white text-lg leading-relaxed"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Welcome to the digital journey of SUHANI MAKKAR — an ambitious AIML student, a resilient entrepreneur, and a visionary thinker driven by empathy and innovation. Her story began with a simple yet defining moment in Grade 6 when she repaired a broken bulb using spare torch parts, defying skepticism and sparking a relentless curiosity for problem-solving. From excelling academically to founding 'Diseño Conmigo,' a digital marketing startup with zero investment, Suhani's entrepreneurial spirit has been a testament to her grit and adaptability.</p>
+<p class="p2"><br></p>
+<p class="p1">With a profound interest in creating AI-driven, socially impactful solutions, Suhani is not just a student but a changemaker. Her conceptualization of the 'Shelter App' — a platform connecting the homeless to NGOs — reflects her dedication to bridging technological innovation and societal welfare. As a certified yoga teacher, a published writer, and a recognized leader through the NCC Aye certificate, Suhani's journey is a harmonious blend of intellect, creativity, and empathy.</p>
+<p class="p2"><br></p>
+<p class="p1">Explore this portfolio to discover her achievements, challenges, and the vision she strives to bring to life.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>)}</p>
+<p class="p2"><br></p>
+<p class="p2"><span class="Apple-converted-space">     </span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{page === 1 &amp;&amp; (</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="p-6 space-y-6 mt-14"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2 className="text-4xl font-bold text-red-600"&gt;Achievements&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{categories.map((category, index) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div key={index} className="mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;h3 className="text-2xl font-bold text-white mb-3"&gt;{category.title}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="space-y-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{category.episodes.map((ep, idx) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;div key={idx} className="bg-[#222] p-4 rounded-lg border-l-4 border-red-600 shadow-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 className="text-2xl font-bold text-red-500"&gt;{ep.title}&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p className="text-gray-300 text-base"&gt;{ep.description}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>)}</p>
+<p class="p2"><br></p>
+<p class="p2"><span class="Apple-converted-space">      </span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{page === 2 &amp;&amp; (</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="p-6 space-y-6 mt-14"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2 className="text-4xl font-bold text-red-600"&gt;My Vision&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p className="text-white text-lg leading-relaxed"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>My vision is to use AI to create socially impactful solutions that address global challenges. I aim to expand the Shelter app, collaborate with NGOs, and contribute to impactful projects like the NGO term in Ghana at TETR College of Business. My goal is to combine technological innovation with empathy to make a meaningful difference.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>)}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;footer className="text-center text-gray-400 mt-6 pb-4"&gt;Contact: suhani2826@gmail.com | +91 9877836217&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>);</p>
+<p class="p1">}</p>
+</body>
+</html>
